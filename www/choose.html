@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/index.js"></script>
 </head>
 
 <body>
@@ -19,37 +20,40 @@
                     id="navcol-1">
                     <ul class="nav navbar-nav mr-auto">
                         <li class="nav-item" role="presentation"><a class="nav-link text-secondary active" href="#">Переводчик</a></li>
-                        <li class="dropdown show"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="#">Играть</a>
-                            <div class="dropdown-menu show" role="menu"><a class="dropdown-item" role="presentation" href="#">Выбирать</a><a class="dropdown-item" role="presentation" href="#">Писать</a></div>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">Играть</a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Выбирать</a><a class="dropdown-item" role="presentation" href="#">Писать</a></div>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
-    <div style="/*max-width:680px;*//*width:95%;*/margin:0 auto;">
+    <div style="margin:0 auto;">
         <div class="container">
             <div class="row">
-                <div class="col-md-6"><img class="d-inline-block" src="assets/img/GettyImages-english-1400x788.gif" width="100%"></div>
+                <div class="col-md-6"><img id='main_img' class="d-inline-block" width="100%"></div>
                 <div class="col-md-6 align-self-center"><div id='radio_button'>
 <div class="custom-control custom-radio">
-  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio1">Слово 1</label>
+  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" onclick="getRightAnswer(this)">
+  <label class="custom-control-label" for="customRadio1"  id="word1">Слово 1</label>
 </div>
 <div class="custom-control custom-radio">
-  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio2">Слово 2</label>
+  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" onclick="getRightAnswer(this)">
+  <label class="custom-control-label" for="customRadio2" id="word2">Слово 2</label>
 </div>
     <div class="custom-control custom-radio">
-  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
-  <label class="custom-control-label" for="customRadio3">Слово 3</label>
+  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" onclick="getRightAnswer(this)">
+  <label class="custom-control-label" for="customRadio3" id="word3">Слово 3</label>
 </div>
 </div></div>
             </div>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/words.js"> </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+    </script>
 </body>
 
 </html>
