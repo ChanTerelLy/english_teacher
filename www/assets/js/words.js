@@ -10,7 +10,7 @@ class Words {
     }
 
     async getWords() {
-        return fetch(this.link)
+        return fetchLocal(this.link)
             .then(res => res.json())
             .catch(err => {
                 console.log(err);
@@ -20,8 +20,10 @@ class Words {
     updateWord() {
         let chooses = ['word1', 'word2', 'word3'];
         let tmp_words = [...this.words];
+        $('.custom-control-input').prop('checked', false);
         for (let choose of chooses){
             let len = tmp_words.length;
+
             let word = Math.floor(Math.random() * parseInt(len));
             document.getElementById(choose).innerText = tmp_words[word].name;
             document.getElementById(choose).value = '';
