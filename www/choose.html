@@ -15,12 +15,12 @@
 <body>
     <div>
         <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
-            <div class="container"><a class="navbar-brand" href="#">English Teacher</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container"><a class="navbar-brand" href="index.html">English Teacher</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
                     <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link text-secondary active" href="write.html">Писать</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-secondary active" href="choose.html">Выбирать</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-secondary " href="write.html">Писать</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-secondary " href="choose.html">Выбирать</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,15 +32,15 @@
                 <div class="col-md-6"><img id='main_img' class="d-inline-block" width="100%"></div>
                 <div class="col-md-6 align-self-center"><div id='radio_button'>
 <div class="custom-control custom-radio">
-  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" onclick="getRightAnswer(this)">
+  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" onclick="checkChooseRightAnswer(this)">
   <label class="custom-control-label" for="customRadio1"  id="word1">Слово 1</label>
 </div>
 <div class="custom-control custom-radio">
-  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" onclick="getRightAnswer(this)">
+  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" onclick="checkChooseRightAnswer(this)">
   <label class="custom-control-label" for="customRadio2" id="word2">Слово 2</label>
 </div>
     <div class="custom-control custom-radio">
-  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" onclick="getRightAnswer(this)">
+  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" onclick="checkChooseRightAnswer(this)">
   <label class="custom-control-label" for="customRadio3" id="word3">Слово 3</label>
 </div>
 </div></div>
@@ -51,6 +51,10 @@
     <script src="assets/js/words.js"> </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script>
+        let words = new Words();
+        words.then(
+            words => words.updateChooseWord()
+        )
     </script>
 </body>
 

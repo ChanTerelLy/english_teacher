@@ -4,7 +4,6 @@ class Words {
         this.count = 0;
         return (async () => {
             this.words = await this.getWords();
-            this.cur_word = this.updateWord();
             return this;
         })();
     }
@@ -17,7 +16,7 @@ class Words {
             });
     };
 
-    updateWord() {
+    updateChooseWord() {
         let chooses = ['word1', 'word2', 'word3'];
         let tmp_words = [...this.words];
         $('.custom-control-input').prop('checked', false);
@@ -35,20 +34,35 @@ class Words {
         let right_word = this.words.filter(word => word.name === right_el.innerText)[0];
         document.getElementById('main_img').src = right_word.path;
     };
+
+    updateInputWord() {
+        document.getElementById('main_input').value = '';
+        let right_word = this.words[Math.floor(Math.random() * this.words.length)];
+        let img = document.getElementById('main_img');
+        img.src = right_word.path;
+        img.setAttribute('word_name', right_word.name);
+    }
 };
 
-let words = new Words();
-
-function getRightAnswer(self) {
+checkChooseRightAnswer = (self) => {
     if (self.nextElementSibling.value === 'right'){
         alert('Правильный ответ');
     }
     else {
         alert('Не правильный ответ');
     }
-    words.then(result => result.updateWord());
+    words.then(result => result.updateChooseWord());
 }
 
+checkInputRightAnswer = () => {
+    if (document.getElementById('main_img').getAttribute('word_name') === document.getElementById('main_input').value){
+        alert('Правильный ответ');
+    }
+    else {
+        alert('Не правильный ответ');
+    }
+    words.then(result => result.updateInputWord());
+};
 
 
 

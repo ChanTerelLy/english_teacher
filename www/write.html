@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="assets/js/index.js"></script>
 </head>
 
 <body>
@@ -19,8 +18,8 @@
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
                     <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link text-secondary active" href="write.html">Писать</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-secondary active" href="choose.html">Выбирать</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-secondary " href="write.html">Писать</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-secondary " href="choose.html">Выбирать</a></li>
                     </ul>
                 </div>
             </div>
@@ -29,16 +28,25 @@
     <div style="/*max-width:680px;*//*width:95%;*/margin:0 auto;">
         <div class="container">
             <div class="row">
-                <div class="col-md-6"><img class="d-inline-block" src="assets/img/GettyImages-english-1400x788.gif" width="100%"></div>
+                <div class="col-md-6"><img id='main_img' class="d-inline-block" width="100%"></div>
                 <div class="col-lg-6 justify-content-center">
-                    <input class="form-control-lg" type="text" placeholder="Введите текст" autocomplete="off">
-                    <button class="btn btn-lg btn-info" style="display: block; margin-top: .5em">Отправить</button>
+                    <input class="form-control-lg" type="text" placeholder="Введите текст" id='main_input' autocomplete="off">
+                    <button onclick="checkInputRightAnswer()" class="btn btn-lg btn-info" style="display: block; margin-top: .5em">Отправить</button>
                 </div>
             </div>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/words.js"></script>
+<script>
+    let words = new Words();
+    words.then(
+        words => words.updateInputWord()
+    )
+</script>
+
 </body>
 
 </html>
