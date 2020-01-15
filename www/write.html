@@ -32,10 +32,18 @@
                 <div class="col-lg-6 justify-content-center">
                     <input class="form-control-lg" type="text" placeholder="Введите текст" id='main_input' autocomplete="off">
                     <button onclick="checkInputRightAnswer()" class="btn btn-lg btn-info" style="display: block; margin-top: .5em">Отправить</button>
+                    <div>
+                        <p></p>
+                        <button id="score" onclick="showScore()">Завершить игру</button>
+                        <p id="wrong_answer"></p>
+                        <p id="right_answer"></p>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/index.js"></script>

@@ -1,3 +1,5 @@
+let right_answer = 0;
+let wrong_answer = 0;
 class Words {
     constructor() {
         this.link = 'assets/words.json';
@@ -47,21 +49,30 @@ class Words {
 checkChooseRightAnswer = (self) => {
     if (self.nextElementSibling.value === 'right'){
         alert('Правильный ответ');
+        right_answer += 1;
     }
     else {
         alert('Не правильный ответ');
+        wrong_answer += 1;
     }
     words.then(result => result.updateChooseWord());
-}
+};
 
 checkInputRightAnswer = () => {
-    if (document.getElementById('main_img').getAttribute('word_name') === document.getElementById('main_input').value){
+    if (document.getElementById('main_img').getAttribute('word_name') === document.getElementById('main_input').value.toLowerCase()){
         alert('Правильный ответ');
+        right_answer += 1;
     }
     else {
         alert('Не правильный ответ');
+        wrong_answer += 1;
     }
     words.then(result => result.updateInputWord());
+};
+
+showScore = () => {
+    document.getElementById('right_answer').innerText = `Правильных ответов: ${right_answer}`;
+    document.getElementById('wrong_answer').innerText = `Не правильных ответов: ${wrong_answer}`;
 };
 
 

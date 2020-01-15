@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/index.js"></script>
+    <style>
+        .custom-control-label::before,
+        .custom-control-label::after {
+            top: .8rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,18 +39,24 @@
             <div class="row">
                 <div class="col-md-6"><img id='main_img' class="d-inline-block" width="100%"></div>
                 <div class="col-md-6 align-self-center"><div id='radio_button'>
-<div class="custom-control custom-radio">
-  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" onclick="checkChooseRightAnswer(this)">
-  <label class="custom-control-label" for="customRadio1"  id="word1">Слово 1</label>
+<div class="custom-control custom-radio" >
+  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"  onclick="checkChooseRightAnswer(this)">
+  <label class="custom-control-label" for="customRadio1"  id="word1"  style="font-size: 1.5rem">Слово 1</label>
 </div>
 <div class="custom-control custom-radio">
   <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" onclick="checkChooseRightAnswer(this)">
-  <label class="custom-control-label" for="customRadio2" id="word2">Слово 2</label>
+  <label class="custom-control-label" for="customRadio2" id="word2" style="font-size: 1.5rem">Слово 2</label>
 </div>
     <div class="custom-control custom-radio">
   <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" onclick="checkChooseRightAnswer(this)">
-  <label class="custom-control-label" for="customRadio3" id="word3">Слово 3</label>
+  <label class="custom-control-label" for="customRadio3" id="word3" style="font-size: 1.5rem">Слово 3</label>
 </div>
+                    <div>
+                        <p></p>
+                        <button id="score" onclick="showScore()">Завершить игру</button>
+                        <p id="wrong_answer"></p>
+                        <p id="right_answer"></p>
+                    </div>
 </div></div>
             </div>
         </div>
